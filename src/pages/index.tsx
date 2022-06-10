@@ -1,45 +1,118 @@
-import Navbar from "@/components";
-import Button from "@/components/Button";
+import { Balls, Button, Me, Navbar } from "@/components";
 import assets from "@/public";
 import { Box, Typography } from "@mui/material";
 import type { NextPage } from "next";
+import { Suspense } from "react";
 
 const Home: NextPage = () => {
   return (
     <Box sx={{ position: "relative", height: "100%" }}>
       <Navbar />
+
+      <Me />
+      <Box
+        sx={{
+          position: "absolute",
+          display: { md: "initial", xs: "none" },
+          top: "50%",
+          left: "80%",
+          transform: "translateY(-50%)",
+        }}
+      >
+        <Typography variant={"subtitle1"}>
+          <Box
+            sx={{
+              position: "absolute",
+              fontSize: 40,
+              transform: "translate(-120%, -30%)",
+              color: "secondary.main",
+              fontFamily: "Inter",
+              fontWeight: "bold",
+            }}
+          >
+            “
+          </Box>
+          When life gives you balls, play basketball. <br /> I don’t play
+          basketball
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          position: "absolute",
+          width: "100vw",
+          height: "100vh",
+          top: 0,
+          left: "-8vw",
+        }}
+      >
+        <Suspense fallback={null}>
+          <Balls />
+        </Suspense>
+      </Box>
       <Box>
-        <Typography variant="h1">Hi, I am Devkey</Typography>
-        <Typography variant="body1" sx={{ width: "500px" }}>
+        <Typography variant="h1" mt={{ xs: 0, md: 10 }}>
+          Hi, I am Devkey
+        </Typography>
+        <Typography variant="body1" sx={{ maxWidth: "500px" }}>
           Please send help, I am being held captive in the basement of a
           warehouse located at
         </Typography>
         <Button text={"Hire me"} />
       </Box>
-      <Box sx={{ position: "absolute", bottom: 100, left: 0 }}>
-        <Box
-          sx={{ height: "1px", width: 40, backgroundColor: "common.black" }}
-        />
-        <Typography variant={"caption"}>Some header</Typography>
-        <Typography variant={"body1"} sx={{ width: "350px" }}>
-          Please send help, I am being held captive in the basement of a
-          warehouse located at
-        </Typography>
-        <assets.images.Barcode style={{ marginTop: "100px" }} />
-      </Box>
       <Box
         sx={{
-          position: "absolute",
-          bottom: 100,
-          right: 0,
+          pointerEvents: "none",
+          position: { xs: "static", md: "absolute" },
+          mt: 4,
+          bottom: 80,
           display: "flex",
-          gap: 2,
+          justifyContent: "space-between",
+          alignItems: "flex-end",
+          width: "100%",
         }}
       >
-        <Typography variant="subtitle1">git</Typography>
-        <Typography variant="subtitle1">lnkdin</Typography>
-        <Typography variant="subtitle1">tw</Typography>
-        <Typography variant="subtitle1">ig</Typography>
+        <Box
+          sx={{
+            flex: 1,
+            display: { md: "initial", xs: "none" },
+          }}
+        >
+          <Box
+            sx={{ height: "1px", width: 40, backgroundColor: "common.black" }}
+          />
+          <Typography variant={"caption"}>Some header</Typography>
+          <Typography variant={"body1"} sx={{ maxWidth: 350 }}>
+            Please send help, I am being held captive in the basement of a
+            warehouse located at
+          </Typography>
+          <assets.images.Barcode style={{ marginTop: "100px" }} />
+        </Box>
+        <Box
+          sx={{
+            flex: 1,
+            display: { xs: "none", md: "flex" },
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 2,
+          }}
+        >
+          <Typography variant={"body1"}>Explore my work</Typography>
+          <assets.images.ArrowDown />
+        </Box>
+        <Box
+          sx={{
+            flex: 1,
+            display: "flex",
+            justifyContent: "flex-end",
+            gap: 2,
+          }}
+        >
+          <Typography variant="subtitle2">git</Typography>
+          <Typography variant="subtitle2">lnkdin</Typography>
+          <Typography variant="subtitle2">tw</Typography>
+          <Typography variant="subtitle2">ig</Typography>
+        </Box>
       </Box>
     </Box>
   );

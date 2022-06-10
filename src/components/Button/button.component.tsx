@@ -1,12 +1,14 @@
 import assets from "@/public";
-import { Box, Typography } from "@mui/material";
-import React, { ReactElement } from "react";
+import { alpha, Box, Typography, useTheme } from "@mui/material";
+import { ReactElement } from "react";
 
 interface Props {
   text: string;
 }
 
 export default function Button({ text }: Props): ReactElement {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -16,7 +18,9 @@ export default function Button({ text }: Props): ReactElement {
         display: "flex",
         alignItems: "center",
         width: "fit-content",
-        mt: 10,
+        mt: { xs: 3, md: 10 },
+        boxShadow: `0px 8px 30px ${alpha(theme.palette.action.active, 0.4)}`,
+        cursor: "pointer",
       }}
     >
       <Typography variant={"button"}>{text}</Typography>
