@@ -12,8 +12,17 @@ theme.typography.h1 = {
   fontFamily: "Gilroy",
   fontSize: '8rem',
   display: "block",
-  marginTop: 32,
+  marginTop: 16,
+
+  [theme.breakpoints.down('md')]: {
+    fontSize: '6rem',
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    fontSize: "3rem",
+  },
 }
+
 
 theme.typography.button = {
   fontFamily: "Gilroy",
@@ -38,10 +47,17 @@ theme.typography.caption = {
 }
 
 theme.typography.subtitle1 = {
+  fontFamily: "Inter",
+  fontSize: "1.2rem",
+  fontWeight: "bold",
+  textTransform: "uppercase",
+}
+
+theme.typography.subtitle2 = {
+  fontFamily: "Inter",
   color: "#737373",
   fontSize: "0.8rem",
   fontWeight: "normal",
-  fontFamily: "Inter",
 }
 
 export default theme;
