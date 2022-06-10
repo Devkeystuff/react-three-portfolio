@@ -72,7 +72,7 @@ export default function Balls(): ReactElement {
       dpr={1.5}
       gl={{ alpha: true, stencil: false, depth: false, antialias: false }}
       camera={{ position: [0, 0, 20], fov: 35, near: 10, far: 40 }}
-      onCreated={(state) => (state.gl.toneMappingExposure = 10)}
+      onCreated={(state) => (state.gl.toneMappingExposure = 1.5)}
     >
       <ambientLight intensity={0.75} />
       <fog attach="fog" args={["red", 25, 35]} />
