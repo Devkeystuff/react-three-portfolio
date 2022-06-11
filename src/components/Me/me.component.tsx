@@ -1,26 +1,15 @@
-import { assets } from "@/consts";
+import { animations, assets } from "@/consts";
 import { useTheme } from "@mui/material";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { ReactElement } from "react";
-
-const circleIn: Variants = {
-  initial: {
-    clipPath: "circle(0% at 50% 50%)",
-  },
-  animate: {
-    clipPath: "circle(50% at 50% 50%)",
-  },
-};
 
 export default function Me(): ReactElement {
   const theme = useTheme();
   return (
     <motion.div
-      initial={"initial"}
-      animate={"animate"}
-      variants={circleIn}
-      transition={{ duration: 2, ease: "easeInOut" }}
+      variants={animations.circleIn}
+      transition={{ duration: 1, ease: "easeInOut" }}
       style={{
         zIndex: -1,
         position: "absolute",
