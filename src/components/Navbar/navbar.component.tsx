@@ -7,6 +7,8 @@ export default function Navbar(): ReactElement {
   return (
     <Box
       sx={{
+        position: "relative",
+        zIndex: 1,
         display: "flex",
         p: { xs: "30px 0", md: "60px 0" },
         justifyContent: "space-between",
