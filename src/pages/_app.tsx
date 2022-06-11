@@ -5,6 +5,7 @@ import theme from "@/styles/theme";
 import { ThemeProvider } from "@mui/system";
 import type { AppProps } from "next/app";
 import { ReactElement } from "react";
+import "../../public/fonts/style.css";
 
 function MyApp({ Component, pageProps }: AppProps): ReactElement {
   return (
