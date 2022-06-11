@@ -1,4 +1,4 @@
-import assets from "@/public";
+import { assets } from "@/consts";
 import { alpha, Box, Typography, useTheme } from "@mui/material";
 import { ReactElement } from "react";
 

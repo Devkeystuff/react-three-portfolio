@@ -1,4 +1,4 @@
-import assets from "@/public";
+import { assets } from "@/consts";
 import { Box } from "@mui/material";
 import { ReactElement } from "react";
 import Burger from "./burger.component";

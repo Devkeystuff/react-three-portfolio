@@ -1,5 +1,5 @@
 import { Balls, Button, Me, Navbar } from "@/components";
-import assets from "@/public";
+import { assets } from "@/consts";
 import { Box, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import { Suspense } from "react";
