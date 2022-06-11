@@ -16,8 +16,8 @@ const Overlay = (): ReactElement => {
           Hi, I am Devkey
         </Typography>
         <Typography variant="body1" sx={{ maxWidth: "500px" }}>
-          Please send help, I am being held captive in the basement of a
-          warehouse located at
+          Et harum amet aspernatur voluptatem explicabo possimus culpa placeat.
+          Modi ipsam sapiente aut vel et enim eaque.
         </Typography>
         <Button text={"Hire me"} />
       </Box>
@@ -44,8 +44,8 @@ const Overlay = (): ReactElement => {
           />
           <Typography variant={"caption"}>Some header</Typography>
           <Typography variant={"body1"} sx={{ maxWidth: 350 }}>
-            Please send help, I am being held captive in the basement of a
-            warehouse located at
+            Et harum amet aspernatur voluptatem explicabo possimus culpa
+            placeat.
           </Typography>
           <assets.images.Barcode style={{ marginTop: "100px" }} />
         </Box>
