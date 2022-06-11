@@ -1,41 +1,42 @@
-import { Box } from "@mui/material";
+import { assets } from "@/consts";
+import { useTheme } from "@mui/material";
+import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 import { ReactElement } from "react";
 
+const circleIn: Variants = {
+  initial: {
+    clipPath: "circle(0% at 50% 50%)",
+  },
+  animate: {
+    clipPath: "circle(50% at 50% 50%)",
+  },
+};
+
 export default function Me(): ReactElement {
+  const theme = useTheme();
   return (
-    <Box
-      sx={{
-        position: { xs: "relative", md: "absolute" },
-        top: { xs: 0, md: "50%" },
-        marginTop: { xs: 5, md: "-17.5vw" },
-        left: 0,
-        right: 0,
-        marginLeft: "auto",
-        marginRight: "auto",
-        width: { xs: "80vw", md: "35vw" },
-        height: { xs: "80vw", md: "35vw" },
-        "::before": {
-          content: "''",
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          borderRadius: "50%",
-          backgroundColor: "action.active",
-          mixBlendMode: "difference",
-        },
+    <motion.div
+      initial={"initial"}
+      animate={"animate"}
+      variants={circleIn}
+      transition={{ duration: 2, ease: "easeInOut" }}
+      style={{
+        zIndex: -1,
+        position: "absolute",
+        width: "35vw",
+        height: "35vw",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        backgroundColor: theme.palette.secondary.main,
+        borderRadius: "50%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "flex-end",
       }}
     >
-      <Box
-        sx={{
-          isolation: "isolate",
-          width: "100%",
-          height: "100%",
-          backgroundImage: `url(rock.png)`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "100%",
-          borderRadius: "50%",
-        }}
-      />
-    </Box>
+      <Image src={assets.images.Rock} alt={"Rock"} layout={"fill"} />
+    </motion.div>
   );
 }
