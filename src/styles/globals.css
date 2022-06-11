@@ -30,6 +30,7 @@ body {
   padding: 0 8vw;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   background: linear-gradient(0deg, #F6F6F6 0%, #f0eaff 80%);
   background-attachment: fixed;
 }
