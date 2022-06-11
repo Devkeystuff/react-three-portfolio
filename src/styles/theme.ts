@@ -55,7 +55,7 @@ theme.typography.subtitle1 = {
 
 theme.typography.subtitle2 = {
   fontFamily: "Inter",
-  color: "#737373",
+  color: "#424242",
   fontSize: "0.8rem",
   fontWeight: "normal",
 }
