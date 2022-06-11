@@ -1,6 +1,7 @@
 import { Balls, Button, Me } from "@/components";
-import { assets } from "@/consts";
+import { animations, assets } from "@/consts";
 import { Box, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import { ReactElement } from "react";
 
@@ -11,7 +12,10 @@ const Overlay = (): ReactElement => {
         <Typography
           variant="h1"
           mt={{ xs: 0, md: 10 }}
-          sx={{ mixBlendMode: "difference", color: "white" }}
+          sx={{
+            mixBlendMode: "difference",
+            color: "white",
+          }}
         >
           Hi, I am Devkey
         </Typography>
@@ -21,11 +25,13 @@ const Overlay = (): ReactElement => {
         </Typography>
         <Button text={"Hire me"} />
       </Box>
-      <Box
-        sx={{
+      <motion.div
+        variants={animations.fadeInBottom}
+        transition={{ duration: 0.3, ease: "easeOut", delay: 1 }}
+        style={{
           pointerEvents: "none",
-          position: { xs: "static", md: "absolute" },
-          mt: 4,
+          position: "absolute",
+          marginTop: 4,
           bottom: 80,
           display: "flex",
           justifyContent: "space-between",
@@ -76,7 +82,7 @@ const Overlay = (): ReactElement => {
           <Typography variant="subtitle2">tw</Typography>
           <Typography variant="subtitle2">ig</Typography>
         </Box>
-      </Box>
+      </motion.div>
     </>
   );
 };
@@ -85,10 +91,11 @@ const Underlay = (): ReactElement => {
   return (
     <>
       <Me />
-      <Box
-        sx={{
+      <motion.div
+        variants={animations.fadeInRight}
+        transition={{ duration: 1, ease: "easeOut", delay: 2 }}
+        style={{
           position: "absolute",
-          display: { md: "initial", xs: "none" },
           top: "50%",
           left: "80%",
           transform: "translateY(-50%)",
@@ -110,10 +117,11 @@ const Underlay = (): ReactElement => {
           When life gives you balls, play basketball. <br /> I don’t play
           basketball
         </Typography>
-      </Box>
+      </motion.div>
     </>
   );
 };
+
 const Home: NextPage = () => {
   return (
     <>
