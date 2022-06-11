@@ -3,6 +3,12 @@ This is an example portfolio landing page made using `react-three`.
 
 ![Landing page](docs/landing.png)
 
+## Tools used 🛠️
+- Next.js (TS)
+- React three
+- Framer motion
+- Material UI
+
 ## Clone
     git clone git@github.com:Devkeystuff/react-three-portfolio.git
 
